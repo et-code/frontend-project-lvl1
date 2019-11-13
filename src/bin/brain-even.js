@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import consoleLogResult from '../index-brain-even';
+import even from '../games/index-brain-even';
 
-consoleLogResult();
+even();
