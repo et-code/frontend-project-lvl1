@@ -2,7 +2,7 @@
 import templateOfGame from '../index';
 
 const description = 'What is the result of the expression?';
-const operation = (a, b, c) => {
+const applyOperation = (a, b, c) => {
   if (b === '+') {
     return a + c;
   }
@@ -17,7 +17,7 @@ const logic = () => {
   const arithmeticOperations = '+-*';
   const randomOperation = arithmeticOperations[Math.floor(Math.random() * (3 - 0)) + 0];
   const question = `${randomNumber1} ${randomOperation} ${randomNumber2}`;
-  const result = operation(randomNumber1, randomOperation, randomNumber2);
+  const result = applyOperation(randomNumber1, randomOperation, randomNumber2);
   return [question, result];
 };
 

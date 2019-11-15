@@ -2,7 +2,7 @@
 import templateOfGame from '../index';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const operation = (num) => {
+const isPrime = (num) => {
   if (num === 2) {
     return 'yes';
   }
@@ -16,7 +16,7 @@ const operation = (num) => {
 const logic = () => {
   const randomNumber = Math.floor(Math.random() * (30 - 1)) + 1;
   const question = `${randomNumber}`;
-  const result = operation(randomNumber);
+  const result = isPrime(randomNumber);
   return [question, result];
 };
 
