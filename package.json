@@ -1,7 +1,11 @@
 {
-  "name": "package1",
+  "name": "brain-games-et-code",
   "version": "1.0.0",
-  "description": "",
+  "description": "Project #1: Brain-Games [Hexlet]",
+  "keywords": [
+    "Brain-games",
+    "Hexlet"
+  ],
   "main": "index.js",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
