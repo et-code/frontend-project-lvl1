@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import templateOfGame from '../index';
+import numberGenerator from '../number-generator';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const isPrime = (num) => {
@@ -14,7 +15,7 @@ const isPrime = (num) => {
   return 'yes';
 };
 const logic = () => {
-  const randomNumber = Math.floor(Math.random() * (30 - 1)) + 1;
+  const randomNumber = numberGenerator(30, 1);
   const question = `${randomNumber}`;
   const result = isPrime(randomNumber);
   return [question, result];

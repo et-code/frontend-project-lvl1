@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import templateOfGame from '../index';
+import numberGenerator from '../number-generator';
 
 const description = 'Find the greatest common divisor of given numbers.';
 const getMaxCommonDivisor = (a, b) => {
@@ -15,8 +16,8 @@ const getMaxCommonDivisor = (a, b) => {
   return resultNumber;
 };
 const logic = () => {
-  const randomNumber1 = Math.floor(Math.random() * (30 - 1)) + 1;
-  const randomNumber2 = Math.floor(Math.random() * (30 - 1)) + 1;
+  const randomNumber1 = numberGenerator(30, 1);
+  const randomNumber2 = numberGenerator(30, 1);
   const question = `${randomNumber1} ${randomNumber2}`;
   const result = getMaxCommonDivisor(randomNumber1, randomNumber2);
   return [question, result];
