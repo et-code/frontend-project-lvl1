@@ -3,13 +3,14 @@ import readlineSync from 'readline-sync';
 
 export default (logicOfGame, descriptionOfGame) => {
   let counter = 0;
+  const correctAnswerCounter = 3;
   console.log('Welcome to the Brain games!');
   const user = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${user}!`);
   console.log(descriptionOfGame);
-  while (counter <= 3) {
+  while (counter <= correctAnswerCounter) {
     const questionAndResult = logicOfGame();
-    if (counter === 3) {
+    if (counter === correctAnswerCounter) {
       console.log(`Congratulations, ${user}!`);
       break;
     }
