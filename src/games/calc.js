@@ -1,26 +1,27 @@
 #!/usr/bin/env node
 import applyTemplateOfGame from '../index';
-import getRandomNum from '../number-generator';
+import generate from '../number-generator';
 
 const description = 'What is the result of the expression?';
 const arithmeticOperations = '+-*';
-const summarizeSubtractMultiply = (a, b, c) => {
-  switch (b) {
+const amountOfArithmeticOperations = 3;
+const summarizeOrSubtractOrMultiply = (a, b, c) => {
+  switch (c) {
     case '+':
-      return a + c;
+      return a + b;
     case '-':
-      return a - c;
+      return a - b;
     default:
-      return a * c;
+      return a * b;
   }
 };
-const applyOperation = () => {
-  const firstOperand = getRandomNum(100, 1);
-  const secondOperand = getRandomNum(100, 1);
-  const operator = arithmeticOperations[getRandomNum(3, 0)];
+const getQuestionAndAnswer = () => {
+  const firstOperand = generate(1, 100);
+  const secondOperand = generate(1, 100);
+  const operator = arithmeticOperations[generate(0, amountOfArithmeticOperations)];
   const question = `${firstOperand} ${operator} ${secondOperand}`;
-  const answer = summarizeSubtractMultiply(firstOperand, operator, secondOperand);
+  const answer = summarizeOrSubtractOrMultiply(firstOperand, secondOperand, operator);
   return [question, answer];
 };
 
-export default () => applyTemplateOfGame(applyOperation, description);
+export default () => applyTemplateOfGame(getQuestionAndAnswer, description);

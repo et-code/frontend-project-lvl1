@@ -1,21 +1,21 @@
 #!/usr/bin/env node
 import applyTemplateOfGame from '../index';
-import getRandomNum from '../number-generator';
+import generate from '../number-generator';
 
 const description = 'What number is missing in the progression?';
-const generateArrayOfNumbers = () => {
-  const randomNum = getRandomNum(10, 1);
-  const step = getRandomNum(5, 1);
-  const arrayOfNumbers = [];
-  const lengthOfArray = 10;
-  for (let i = 0; i < lengthOfArray; i += 1) {
-    const nextNum = randomNum + i * step;
-    arrayOfNumbers.push(nextNum);
+const generateElements = () => {
+  const firstElement = generate(1, 10);
+  const step = generate(1, 5);
+  const elements = [];
+  const lengthOfElements = 10;
+  for (let i = 0; i < lengthOfElements; i += 1) {
+    const nextElement = firstElement + i * step;
+    elements.push(nextElement);
   }
-  const indexOfArray = getRandomNum(8, 1);
-  const answer = `${arrayOfNumbers.splice(indexOfArray, 1, '..')}`;
-  const question = `${arrayOfNumbers.join(' ')}`;
+  const indexOfElements = generate(1, 8);
+  const answer = `${elements.splice(indexOfElements, 1, '..')}`;
+  const question = `${elements.join(' ')}`;
   return [question, answer];
 };
 
-export default () => applyTemplateOfGame(generateArrayOfNumbers, description);
+export default () => applyTemplateOfGame(generateElements, description);

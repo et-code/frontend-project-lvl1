@@ -1,26 +1,26 @@
 #!/usr/bin/env node
 import applyTemplateOfGame from '../index';
-import getRandomNum from '../number-generator';
+import generate from '../number-generator';
 
 const description = 'Find the greatest common divisor of given numbers.';
 const getMaxCommonDivisor = (a, b) => {
-  const minNum = (a < b) ? a : b;
-  const maxNum = (a > b) ? a : b;
-  let resultNum;
-  for (let i = minNum; i > 0; i -= 1) {
-    if ((minNum % i) === 0 && (maxNum % i) === 0) {
-      resultNum = i;
-      return resultNum;
+  const minOperand = (a < b) ? a : b;
+  const maxOperand = (a > b) ? a : b;
+  let result;
+  for (let i = minOperand; i > 0; i -= 1) {
+    if ((minOperand % i) === 0 && (maxOperand % i) === 0) {
+      result = i;
+      return result;
     }
   }
-  return resultNum;
+  return result;
 };
-const applyOperation = () => {
-  const firstRandomNum = getRandomNum(30, 1);
-  const secondRandomNum = getRandomNum(30, 1);
-  const question = `${firstRandomNum} ${secondRandomNum}`;
-  const answer = getMaxCommonDivisor(firstRandomNum, secondRandomNum);
+const getQuestionAndAnswer = () => {
+  const firstOperand = generate(1, 30);
+  const secondOperand = generate(1, 30);
+  const question = `${firstOperand} ${secondOperand}`;
+  const answer = getMaxCommonDivisor(firstOperand, secondOperand);
   return [question, answer];
 };
 
-export default () => applyTemplateOfGame(applyOperation, description);
+export default () => applyTemplateOfGame(getQuestionAndAnswer, description);

@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-const numberGenerator = (max, min) => (Math.floor(Math.random() * (max - min)) + min);
+const generate = (min, max) => (Math.floor(Math.random() * (max - min)) + min);
 
-export default numberGenerator;
+export default generate;

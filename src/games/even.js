@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 import applyTemplateOfGame from '../index';
-import getRandomNum from '../number-generator';
+import generate from '../number-generator';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
-const isEven = (num) => (num % 2 === 0);
+const isEven = (number) => (number % 2 === 0);
 
-const applyOperation = () => {
-  const question = getRandomNum(1000, 1);
+const getQuestionAndAnswer = () => {
+  const question = generate(1, 1000);
   const answer = (isEven(question) ? 'yes' : 'no');
   return [question, answer];
 };
 
-export default () => applyTemplateOfGame(applyOperation, description);
+export default () => applyTemplateOfGame(getQuestionAndAnswer, description);
