@@ -3,17 +3,17 @@ import applyTemplateOfGame from '../index';
 import generate from '../number-generator';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const isPrime = (number) => {
+const isPrime = (value) => {
   const startElement = 2;
-  if (number < startElement) {
+  if (value < startElement) {
     return false;
   }
-  const divisor = ((number / 2) >= startElement) ? (number / 2) : number;
+  const divisor = ((value / 2) >= startElement) ? (value / 2) : value;
   for (let i = startElement; i <= divisor; i += 1) {
-    if (number === 2) {
+    if (value === 2) {
       return true;
     }
-    if ((number % i === 0) || ((number % i === 0) && (number === i))) {
+    if ((value % i === 0) || ((value % i === 0) && (value === i))) {
       return false;
     }
   }
