@@ -4,10 +4,10 @@
 
 ## Description
 Console game set.
-`brain-calc`: What is the result of the expression?
-`brain-even`: Is number even?
-`brain-gcd`: Find the greatest common divisor of given numbers.
-`brain-prime`: Is number prime?
+`brain-calc`: What is the result of the expression? <br/>
+`brain-even`: Is number even? <br/>
+`brain-gcd`: Find the greatest common divisor of given numbers. <br/>
+`brain-prime`: Is number prime? <br/>
 `brain-progression`: What number is missing in the progression?
 
 ## Installation
