@@ -3,11 +3,11 @@
 <a href="https://travis-ci.org/et-code/frontend-project-lvl1"><img src="https://travis-ci.com/et-code/frontend-project-lvl1.svg?branch=master" /></a>
 
 ## Description
-Console game set.
-`brain-calc`: What is the result of the expression? <br/>
-`brain-even`: Is number even? <br/>
-`brain-gcd`: Find the greatest common divisor of given numbers. <br/>
-`brain-prime`: Is number prime? <br/>
+Console game set.<br/>
+`brain-calc`: What is the result of the expression?<br/>
+`brain-even`: Is number even?<br/>
+`brain-gcd`: Find the greatest common divisor of given numbers.<br/>
+`brain-prime`: Is number prime?<br/>
 `brain-progression`: What number is missing in the progression?
 
 ## Installation
