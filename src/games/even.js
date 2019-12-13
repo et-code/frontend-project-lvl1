@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import applyTemplateOfGame from '../index';
+import applyTemplateOfGame from '..';
 import generate from '../number-generator';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';

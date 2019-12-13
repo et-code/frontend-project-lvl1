@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import applyTemplateOfGame from '../index';
+import applyTemplateOfGame from '..';
 import generate from '../number-generator';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -20,9 +20,8 @@ const isPrime = (value) => {
   return true;
 };
 const getQuestionAndAnswer = () => {
-  const operand = generate(1, 30);
-  const question = `${operand}`;
-  const answer = (isPrime(operand) ? 'yes' : 'no');
+  const question = generate(1, 30);
+  const answer = (isPrime(question) ? 'yes' : 'no');
   return [question, answer];
 };
 

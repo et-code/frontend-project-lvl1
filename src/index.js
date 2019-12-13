@@ -11,7 +11,7 @@ export default (logicOfGame, descriptionOfGame) => {
     const questionAndResult = logicOfGame();
     if (counter === correctAnswersCount) {
       console.log(`Congratulations, ${user}!`);
-      break;
+      return;
     }
     console.log(`Question: ${questionAndResult[0]}`);
     const correctAnswer = String(questionAndResult[1]);
@@ -21,7 +21,7 @@ export default (logicOfGame, descriptionOfGame) => {
     } if (answer !== correctAnswer) {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${user}!`);
-      break;
+      return;
     }
   }
 };

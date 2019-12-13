@@ -1,9 +1,9 @@
 #!/usr/bin/env node
-import applyTemplateOfGame from '../index';
+import applyTemplateOfGame from '..';
 import generate from '../number-generator';
 
 const description = 'Find the greatest common divisor of given numbers.';
-const getMaxCommonDivisor = (a, b) => {
+const gcd = (a, b) => {
   const minOperand = (a < b) ? a : b;
   const maxOperand = (a > b) ? a : b;
   let result;
@@ -19,7 +19,7 @@ const getQuestionAndAnswer = () => {
   const firstOperand = generate(1, 30);
   const secondOperand = generate(1, 30);
   const question = `${firstOperand} ${secondOperand}`;
-  const answer = getMaxCommonDivisor(firstOperand, secondOperand);
+  const answer = gcd(firstOperand, secondOperand);
   return [question, answer];
 };
 
