@@ -4,8 +4,8 @@ import generate from '../number-generator';
 
 const description = 'What is the result of the expression?';
 const arithmeticOperations = '+-*';
-const calculateAnswer = (a, b, c) => {
-  switch (c) {
+const calculateAnswer = (a, b, operator) => {
+  switch (operator) {
     case '+':
       return a + b;
     case '-':
