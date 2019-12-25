@@ -1,11 +1,10 @@
-#!/usr/bin/env node
-import applyTemplateOfGame from '..';
-import generate from '../number-generator';
+import buildGameEngine from '..';
+import generateValue from '../number-generator';
 
 const description = 'Find the greatest common divisor of given numbers.';
 const gcd = (a, b) => {
-  const minOperand = (a < b) ? a : b;
-  const maxOperand = (a > b) ? a : b;
+  const minOperand = Math.min(a, b);
+  const maxOperand = Math.max(a, b);
   let result;
   for (let i = minOperand; i > 0; i -= 1) {
     if ((minOperand % i) === 0 && (maxOperand % i) === 0) {
@@ -16,11 +15,11 @@ const gcd = (a, b) => {
   return result;
 };
 const getQuestionAndAnswer = () => {
-  const firstOperand = generate(1, 30);
-  const secondOperand = generate(1, 30);
+  const firstOperand = generateValue(1, 30);
+  const secondOperand = generateValue(1, 30);
   const question = `${firstOperand} ${secondOperand}`;
   const answer = gcd(firstOperand, secondOperand);
   return [question, answer];
 };
 
-export default () => applyTemplateOfGame(getQuestionAndAnswer, description);
+export default () => buildGameEngine(getQuestionAndAnswer, description);

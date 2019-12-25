@@ -1,26 +1,31 @@
-#!/usr/bin/env node
-import applyTemplateOfGame from '..';
-import generate from '../number-generator';
+import buildGameEngine from '..';
+import generateValue from '../number-generator';
 
 const description = 'What is the result of the expression?';
 const arithmeticOperations = '+-*';
 const calculateAnswer = (a, b, operator) => {
+  let result;
   switch (operator) {
     case '+':
-      return a + b;
+      result = a + b;
+      break;
     case '-':
-      return a - b;
+      result = a - b;
+      break;
+    case '*':
+      result = a * b;
+      break;
     default:
-      return a * b;
   }
+  return result;
 };
 const getQuestionAndAnswer = () => {
-  const firstOperand = generate(1, 100);
-  const secondOperand = generate(1, 100);
-  const operator = arithmeticOperations[generate(0, arithmeticOperations.length - 1)];
+  const firstOperand = generateValue(1, 100);
+  const secondOperand = generateValue(1, 100);
+  const operator = arithmeticOperations[generateValue(0, arithmeticOperations.length - 1)];
   const question = `${firstOperand} ${operator} ${secondOperand}`;
   const answer = calculateAnswer(firstOperand, secondOperand, operator);
   return [question, answer];
 };
 
-export default () => applyTemplateOfGame(getQuestionAndAnswer, description);
+export default () => buildGameEngine(getQuestionAndAnswer, description);
