@@ -1,5 +1,5 @@
 import buildGameEngine from '..';
-import generateValue from '../number-generator';
+import generateRandomInt from '../number-generator';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const isPrime = (value) => {
@@ -18,7 +18,7 @@ const isPrime = (value) => {
   return true;
 };
 const getQuestionAndAnswer = () => {
-  const question = generateValue(1, 30);
+  const question = generateRandomInt(1, 30);
   const answer = (isPrime(question) ? 'yes' : 'no');
   return [question, answer];
 };

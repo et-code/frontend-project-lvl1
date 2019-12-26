@@ -1,5 +1,5 @@
 import buildGameEngine from '..';
-import generateValue from '../number-generator';
+import generateRandomInt from '../number-generator';
 
 const description = 'What is the result of the expression?';
 const arithmeticOperations = '+-*';
@@ -20,9 +20,9 @@ const calculateAnswer = (a, b, operator) => {
   return result;
 };
 const getQuestionAndAnswer = () => {
-  const firstOperand = generateValue(1, 100);
-  const secondOperand = generateValue(1, 100);
-  const operator = arithmeticOperations[generateValue(0, arithmeticOperations.length - 1)];
+  const firstOperand = generateRandomInt(1, 100);
+  const secondOperand = generateRandomInt(1, 100);
+  const operator = arithmeticOperations[generateRandomInt(0, arithmeticOperations.length - 1)];
   const question = `${firstOperand} ${operator} ${secondOperand}`;
   const answer = calculateAnswer(firstOperand, secondOperand, operator);
   return [question, answer];
